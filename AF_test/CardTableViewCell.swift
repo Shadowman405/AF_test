@@ -13,8 +13,17 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var cardName: UILabel!
     
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func configCell(with card: CardMTG) {
+        cardName.text = card.name
+        
+        guard let url = URL(string: card.imageURL ) else {return}
+
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: url) else { return }
+            DispatchQueue.main.async {
+                self.cardImage.image = UIImage(data: imageData)
+            }
+        }
     }
 
 }

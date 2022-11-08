@@ -14,17 +14,12 @@ class CardsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 250
+        tableView.rowHeight = 100
         
-        fetchCards()
+        
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -34,19 +29,24 @@ class CardsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCard", for: indexPath) as! CardTableViewCell
-        
+        let card = cards[indexPath.row]
+        cell.configCell(with: card)
 
         return cell
     }
     
-}
-
-
-extension CardsTableViewController {
     func fetchCards() {
         manager.fetchCards { card in
             self.cards = card
             self.tableView.reloadData()
+            print(self.cards.count)
         }
     }
+    
+    @IBAction func beepBtn(_ sender: Any) {
+        fetchCards()
+        print(cards)
+    }
+    
+    
 }
