@@ -106,4 +106,12 @@ struct CardMTG: Codable {
 //        case imageURL = "imageUrl"
 //        case foreignNames, printings, originalType, legalities, id
 //    }
+    
+    init(cardData: [String: Any]) {
+        name = cardData["name"] as? String ?? ""
+        type = cardData["type"] as? String ?? ""
+        imageURL = cardData["imageURL"] as? String ?? ""
+        originalType = cardData["originalType"] as? String ?? ""
+        id = cardData["id"] as? String ?? ""
+    }
 }

@@ -13,16 +13,23 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     let urlMTG = "https://api.magicthegathering.io/v1/cards?page=311"
-    let cards = [CardMTG]()
     
-    func fetchCards(){
-        AF.request(urlMTG).responseJSON { responseData in
-            switch responseData.result{
+    
+    func fetchCards(with completion: @escaping ([CardMTG]) -> ()) {
+        var cards = [CardMTG]()
+        
+        AF.request(urlMTG).validate().responseJSON { responseData in
+            switch responseData.result {
             case .success(let value):
-                let json = JSON(value)
-                for card in json {
-//                    let newCard = CardMTG(name: json["cards"][card]["name"], type: json["cards"][card]["type"],imageURL: json["cards"][card]["imageURL"] originalType: json["cards"][card]["originalType"], id: json["cards"][card]["id"])
-                    print(card)
+                guard let cardData = value as? [[String: Any]] else {return}
+                
+                for card in cardData {
+                    let newCard = CardMTG(cardData: card)
+                    cards.append(newCard)
+                }
+                
+                DispatchQueue.main.async {
+                    completion(cards)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
