@@ -83,3 +83,27 @@ class JSONNull: Codable, Hashable {
         try container.encodeNil()
     }
 }
+
+struct CardMTG: Codable {
+    let name: String
+//    let cmc: Int
+//    let colorIdentity: [String]
+    let type: String
+    //let supertypes, types, subtypes: [String]
+//    let rarity, cardSet, setName, text: String
+//    let artist, number, layout, multiverseid: String
+    let imageURL: String
+//    let foreignNames: [ForeignName]
+//    let printings: [String]
+    let originalType: String
+//    let legalities: [LegalityElement]
+    let id: String
+
+//    enum CodingKeys: String, CodingKey {
+//        case name, cmc, colorIdentity, type, supertypes, types, subtypes, rarity
+//        case cardSet = "set"
+//        case setName, text, artist, number, layout, multiverseid
+//        case imageURL = "imageUrl"
+//        case foreignNames, printings, originalType, legalities, id
+//    }
+}
