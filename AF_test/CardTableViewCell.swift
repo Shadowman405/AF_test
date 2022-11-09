@@ -21,7 +21,11 @@ class CardTableViewCell: UITableViewCell {
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: url) else { return }
             DispatchQueue.main.async {
-                self.cardImage.image = UIImage(data: imageData)
+                if card.imageURL == "placeholder" {
+                    self.cardImage.image = UIImage(named:"placeholder")
+                } else {
+                    self.cardImage.image = UIImage(data: imageData)
+                }
             }
         }
     }
