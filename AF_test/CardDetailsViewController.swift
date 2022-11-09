@@ -25,6 +25,7 @@ class CardDetailsViewController: UIViewController {
         guard let card = selectedCard else { return }
         guard let cardImg = URL(string: card.imageURL) else {return}
         cardNameLbl.text = card.name
+        //self.title = card.name
         
         DispatchQueue.global().async {
             guard let data = try? Data(contentsOf: cardImg) else {return}

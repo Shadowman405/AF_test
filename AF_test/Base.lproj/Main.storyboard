@@ -48,13 +48,7 @@
                             <outlet property="delegate" destination="iqP-Wi-whL" id="cD3-t3-P9O"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cards" id="eNt-ta-ep0">
-                        <barButtonItem key="rightBarButtonItem" title="Beep" id="cPl-2y-yT8">
-                            <connections>
-                                <action selector="beepBtn:" destination="iqP-Wi-whL" id="sn8-9p-Ews"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Cards" id="eNt-ta-ep0"/>
                     <connections>
                         <segue destination="bwr-3D-6zT" kind="show" identifier="toDetails" id="vWi-vF-CLM"/>
                     </connections>

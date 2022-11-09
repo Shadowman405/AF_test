@@ -14,7 +14,7 @@ class CardsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 220
         
         fetchCards()
     }
@@ -22,7 +22,6 @@ class CardsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return cards.count
     }
     
@@ -35,6 +34,7 @@ class CardsTableViewController: UITableViewController {
             let cardDetailVC = segue.destination as! CardDetailsViewController
             let selectedRow = tableView.indexPathForSelectedRow!.row
             cardDetailVC.selectedCard = cards[selectedRow]
+            print(cards[selectedRow])
         }
     }
     
@@ -51,14 +51,7 @@ class CardsTableViewController: UITableViewController {
         manager.fetchCards { card in
             self.cards = card
             self.tableView.reloadData()
-            print(self.cards[0].imageURL)
         }
     }
-    
-    @IBAction func beepBtn(_ sender: Any) {
-        //fetchCards()
-        print(cards[0])
-    }
-    
     
 }
