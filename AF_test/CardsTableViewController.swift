@@ -16,7 +16,7 @@ class CardsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 100
         
-        
+        fetchCards()
     }
 
     // MARK: - Table view data source
@@ -25,7 +25,18 @@ class CardsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return cards.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetails" {
+            let cardDetailVC = segue.destination as! CardDetailsViewController
+            let selectedRow = tableView.indexPathForSelectedRow!.row
+            cardDetailVC.selectedCard = cards[selectedRow]
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCard", for: indexPath) as! CardTableViewCell
@@ -34,6 +45,7 @@ class CardsTableViewController: UITableViewController {
 
         return cell
     }
+    
     
     func fetchCards() {
         manager.fetchCards { card in
@@ -44,8 +56,8 @@ class CardsTableViewController: UITableViewController {
     }
     
     @IBAction func beepBtn(_ sender: Any) {
-        fetchCards()
-        print("beep")
+        //fetchCards()
+        print(cards[0])
     }
     
     
