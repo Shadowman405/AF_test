@@ -16,25 +16,17 @@ class NetworkManager {
     
     
     func fetchCards(with completion: @escaping ([CardMTG]) -> ()) {
-        var cards = [CardMTG]()
+        //var cards = [CardMTG]()
         let url = "https://api.magicthegathering.io/v1/cards?page=311"
         
         AF.request(url, method: .get).validate().responseJSON { responseData in
             switch responseData.result {
             case .success(let value):
-                guard let cardData = value as? [[String: Any]] else {return}
-                let json = JSON(value)
+                guard let cardData = CardMTG.getAllCards(from: value) else {return}
                 
-                
-                for card in cardData {
-                    print(card)
-                    let newCard = CardMTG(cardData: card)
-                    cards.append(newCard)
-                    print(card)
-                }
                 
                 DispatchQueue.main.async {
-                    completion(cards)
+                    completion(cardData)
                 }
             case .failure(let error):
                 print(error.localizedDescription)

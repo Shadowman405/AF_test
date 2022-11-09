@@ -107,11 +107,17 @@ struct CardMTG: Codable {
 //        case foreignNames, printings, originalType, legalities, id
 //    }
     
-    init(cardData: [String: Any]) {
+    init?(cardData: [String: Any]) {
         name = cardData["name"] as? String ?? ""
         type = cardData["type"] as? String ?? ""
         imageURL = cardData["imageURL"] as? String ?? ""
         originalType = cardData["originalType"] as? String ?? ""
         id = cardData["id"] as? String ?? ""
+    }
+    
+    static func getAllCards(from value: Any) -> [CardMTG]? {
+        guard let value = value as? [String: Any] else { return []}
+        guard let results = value["cards"] as? [[String: Any]] else {return []}
+        return results.compactMap { CardMTG(cardData: $0) }
     }
 }
