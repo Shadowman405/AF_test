@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textLbl: UILabel!
     let urlMTG = "https://api.magicthegathering.io/v1/cards?page=311"
-    var cards = [CardElement]()
+    var cards = [CardMTG]()
     
 
     override func viewDidLoad() {

@@ -39,13 +39,13 @@ class CardsTableViewController: UITableViewController {
         manager.fetchCards { card in
             self.cards = card
             self.tableView.reloadData()
-            print(self.cards.count)
+            print(self.cards[0].imageURL)
         }
     }
     
     @IBAction func beepBtn(_ sender: Any) {
         fetchCards()
-        print(cards)
+        print("beep")
     }
     
     
