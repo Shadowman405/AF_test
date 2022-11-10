@@ -10,6 +10,7 @@ struct CardMTG: Codable {
 //    let cmc: Int
 //    let colorIdentity: [String]
     let type: String
+    let rarity: String
     //let supertypes, types, subtypes: [String]
 //    let rarity, cardSet, setName, text: String
 //    let artist, number, layout, multiverseid: String
@@ -26,6 +27,7 @@ struct CardMTG: Codable {
         imageURL = cardData["imageUrl"] as? String ?? "placeholder"
         originalType = cardData["originalType"] as? String ?? ""
         id = cardData["id"] as? String ?? ""
+        rarity = cardData["rarity"] as? String ?? ""
     }
     
     static func getAllCards(from value: Any) -> [CardMTG]? {

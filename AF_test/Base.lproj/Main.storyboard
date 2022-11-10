@@ -29,7 +29,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tz5-sI-CHK">
-                                            <rect key="frame" x="175" y="11" width="195" height="91"/>
+                                            <rect key="frame" x="175" y="11" width="195" height="65"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rarity: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD0-Nm-iSN">
+                                            <rect key="frame" x="175" y="102" width="195" height="42"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -40,6 +47,7 @@
                                 <connections>
                                     <outlet property="cardImage" destination="8BY-0F-HEF" id="0jl-AM-mtk"/>
                                     <outlet property="cardName" destination="tz5-sI-CHK" id="WQm-1v-0Jz"/>
+                                    <outlet property="rarityLbl" destination="PD0-Nm-iSN" id="rc1-d9-w9z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

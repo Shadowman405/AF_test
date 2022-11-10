@@ -11,10 +11,12 @@ class CardTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var cardName: UILabel!
+    @IBOutlet weak var rarityLbl: UILabel!
     
     
     func configCell(with card: CardMTG) {
         cardName.text = card.name
+        rarityLbl.text = "Rarity:  \(card.rarity)"
         
         guard let url = URL(string: card.imageURL ) else {return}
 
