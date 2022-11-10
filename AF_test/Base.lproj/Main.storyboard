@@ -84,6 +84,27 @@
                                 <rect key="frame" x="16" y="143" width="358" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvT-CU-Ul5">
+                                <rect key="frame" x="16" y="541" width="358" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KL9-3T-fGU">
+                                <rect key="frame" x="16" y="586" width="358" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gs-7Z-vbM">
+                                <rect key="frame" x="16" y="625" width="358" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mzf-4H-IeX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,6 +113,9 @@
                     <connections>
                         <outlet property="cardImg" destination="xII-3g-NvR" id="8uP-kQ-l9j"/>
                         <outlet property="cardNameLbl" destination="ywx-9Y-2Ta" id="KOd-fA-zZl"/>
+                        <outlet property="cardTextLbl" destination="5Gs-7Z-vbM" id="v28-Ms-OnU"/>
+                        <outlet property="manaCostLbl" destination="KL9-3T-fGU" id="5Be-SF-5Ny"/>
+                        <outlet property="setNameLbl" destination="mvT-CU-Ul5" id="8mL-LV-cye"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFo-wv-bcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
