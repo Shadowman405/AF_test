@@ -14,6 +14,7 @@
 		BF61A9962919C2B400155957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF61A9942919C2B400155957 /* Main.storyboard */; };
 		BF61A9982919C2B500155957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF61A9972919C2B500155957 /* Assets.xcassets */; };
 		BF61A99B2919C2B500155957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF61A9992919C2B500155957 /* LaunchScreen.storyboard */; };
+		BFBAA42F292020EA00463B6B /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAA42E292020EA00463B6B /* CardImageView.swift */; };
 		BFF0CEF9291AF91C003ACD82 /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0CEF8291AF91C003ACD82 /* CardsTableViewController.swift */; };
 		BFF0CEFB291AF9B0003ACD82 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0CEFA291AF9B0003ACD82 /* CardTableViewCell.swift */; };
 		BFF0CEFD291AFA29003ACD82 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0CEFC291AFA29003ACD82 /* NetworkManager.swift */; };
@@ -33,6 +34,7 @@
 		BF61A9972919C2B500155957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF61A99A2919C2B500155957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF61A99C2919C2B500155957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFBAA42E292020EA00463B6B /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 		BFF0CEF8291AF91C003ACD82 /* CardsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
 		BFF0CEFA291AF9B0003ACD82 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		BFF0CEFC291AFA29003ACD82 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				BFF0CEFA291AF9B0003ACD82 /* CardTableViewCell.swift */,
 				BFF0CEFC291AFA29003ACD82 /* NetworkManager.swift */,
 				BF41EFA2291C345E00CEB45C /* CardDetailsViewController.swift */,
+				BFBAA42E292020EA00463B6B /* CardImageView.swift */,
 			);
 			path = AF_test;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				BFF0CEFD291AFA29003ACD82 /* NetworkManager.swift in Sources */,
 				BFF0CEF9291AF91C003ACD82 /* CardsTableViewController.swift in Sources */,
 				BF61A9912919C2B400155957 /* SceneDelegate.swift in Sources */,
+				BFBAA42F292020EA00463B6B /* CardImageView.swift in Sources */,
 				BF1E710E2919C4FE00A6358D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
