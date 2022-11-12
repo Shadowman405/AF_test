@@ -11,14 +11,18 @@ class CardImageView: UIImageView {
     
     func fetchImage(from url: String) {
         guard let imageURL = URL(string: url) else {return}
+        
         //use from cache
+        if let cachedImage = getCachedImage(from: imageURL) {
+            image = cachedImage
+            return
+        }
         
         //load image
         ImageManager.shared.fetchImage(from: imageURL) { data, response in
             DispatchQueue.main.async {
                 self.image = UIImage(data: data)
             }
-            
             //Save image to cache
             self.saveDataToCache(with: data, and: response)
         }
