@@ -34,3 +34,22 @@ class NetworkManager {
         }
     }
 }
+
+
+class ImageManager {
+    static var shared = ImageManager()
+    
+    private init() {}
+    
+    func fetchImage(from url: URL, completion: @escaping (Data,URLResponse) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, let response = response else {print(error?.localizedDescription ?? "Error, no description")
+                return
+            }
+            
+            guard url == response.url else {return}
+            
+            completion(data, response)
+        }.resume()
+    }
+}
