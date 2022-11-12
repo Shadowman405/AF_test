@@ -9,7 +9,7 @@ import UIKit
 
 class CardTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var cardImage: UIImageView!
+    @IBOutlet weak var cardImage: CardImageView!
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var rarityLbl: UILabel!
     
@@ -18,18 +18,20 @@ class CardTableViewCell: UITableViewCell {
         cardName.text = card.name
         rarityLbl.text = "Rarity:  \(card.rarity)"
         
-        guard let url = URL(string: card.imageURL ) else {return}
-
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else { return }
-            DispatchQueue.main.async {
-                if card.imageURL == "placeholder" {
-                    self.cardImage.image = UIImage(named:"placeholder")
-                } else {
-                    self.cardImage.image = UIImage(data: imageData)
-                }
-            }
-        }
+//        guard let url = URL(string: card.imageURL ) else {return}
+//
+//        DispatchQueue.global().async {
+//            guard let imageData = try? Data(contentsOf: url) else { return }
+//            DispatchQueue.main.async {
+//                if card.imageURL == "placeholder" {
+//                    self.cardImage.image = UIImage(named:"placeholder")
+//                } else {
+//                    self.cardImage.image = UIImage(data: imageData)
+//                }
+//            }
+//        }
+        
+        cardImage.fetchImage(from: card.imageURL)
     }
 
 }
