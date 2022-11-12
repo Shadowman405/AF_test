@@ -14,6 +14,30 @@ class CardImageView: UIImageView {
         //use from cache
         
         //load image
+        ImageManager.shared.fetchImage(from: imageURL) { data, response in
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data)
+            }
+            
+            //Save image to cache
+            self.saveDataToCache(with: data, and: response)
+        }
+    }
+    
+    private func saveDataToCache(with data: Data, and response: URLResponse) {
+        guard let urlResponse = response.url else {return}
+        let request = URLRequest(url: urlResponse)
         
+        let cacheResponse = CachedURLResponse(response: response, data: data)
+        
+        URLCache.shared.storeCachedResponse(cacheResponse, for: request)
+    }
+    
+    private func getCachedImage(from url: URL) -> UIImage? {
+        let request = URLRequest(url: url)
+        if let cachedResponse = URLCache.shared.cachedResponse(for: request) {
+            return UIImage(data: cachedResponse.data)
+        }
+        return nil
     }
 }
