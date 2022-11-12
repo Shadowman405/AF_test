@@ -17,6 +17,7 @@ class CardTableViewCell: UITableViewCell {
     func configCell(with card: CardMTG) {
         cardName.text = card.name
         rarityLbl.text = "Rarity:  \(card.rarity)"
+        cardImage.fetchImage(from: card.imageURL)
         
 //        guard let url = URL(string: card.imageURL ) else {return}
 //
@@ -30,8 +31,6 @@ class CardTableViewCell: UITableViewCell {
 //                }
 //            }
 //        }
-        
-        cardImage.fetchImage(from: card.imageURL)
     }
 
 }

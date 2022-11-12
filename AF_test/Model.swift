@@ -24,7 +24,7 @@ struct CardMTG: Codable {
     init?(cardData: [String: Any]) {
         name = cardData["name"] as? String ?? ""
         type = cardData["type"] as? String ?? ""
-        imageURL = cardData["imageUrl"] as? String ?? "placeholder"
+        imageURL = cardData["imageUrl"] as? String ?? ""
         originalType = cardData["originalType"] as? String ?? ""
         id = cardData["id"] as? String ?? ""
         rarity = cardData["rarity"] as? String ?? ""

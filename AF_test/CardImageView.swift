@@ -10,7 +10,9 @@ import UIKit
 class CardImageView: UIImageView {
     
     func fetchImage(from url: String) {
-        guard let imageURL = URL(string: url) else {return}
+        guard let imageURL = URL(string: url) else {
+            print(url)
+            return}
         
         //use from cache
         if let cachedImage = getCachedImage(from: imageURL) {
@@ -22,6 +24,7 @@ class CardImageView: UIImageView {
         ImageManager.shared.fetchImage(from: imageURL) { data, response in
             DispatchQueue.main.async {
                 self.image = UIImage(data: data)
+                
             }
             //Save image to cache
             self.saveDataToCache(with: data, and: response)

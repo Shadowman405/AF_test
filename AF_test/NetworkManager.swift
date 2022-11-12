@@ -42,14 +42,15 @@ class ImageManager {
     private init() {}
     
     func fetchImage(from url: URL, completion: @escaping (Data,URLResponse) -> ()) {
+        //print(url)
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let response = response else {print(error?.localizedDescription ?? "Error, no description")
+            guard let data = data, let rescponse = response else {print(error?.localizedDescription ?? "Error, no description")
                 return
             }
             
-            guard url == response.url else {return}
+            guard url == rescponse.url else {return}
             
-            completion(data, response)
+            completion(data, rescponse)
         }.resume()
     }
 }
